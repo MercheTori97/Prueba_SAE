@@ -1,0 +1,10 @@
+int temperatura_niveles_ideales=25;
+	int Medidida_en_sensor=0;
+
+	mdt=Medidida_en_sensor();
+
+	if(Medidida_en_sensor>Temperatura_niveles_ideales){
+	  do{
+		Modificacion_variable();
+	  }while(Temperatura_niveles_ideales>Mediida_en_sensor)
+	}
