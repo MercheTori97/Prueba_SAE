@@ -5,3 +5,21 @@ while not 0<= numeroIntroducido <= 99:
  numeroIntroducido = int (numeroIntroducido) 
  except:
  print("La conversión del número para identificar el rango ha fallado....")
+
+force=''
+if test "x$1" = "x-f"; then
+    force='-f'
+    shift
+fi
+
+die() {
+    printf '%s\n' "$@"
+    exit 128
+}
+targ="$(git rev-parse --verify "$1" 2>/dev/null)" || die "$1 is not a commit"
+br="${2:-HEAD}"
+
+TARG_COMMIT="$targ"
+TARG_NAME="${3-}"
+TARG_EMAIL="${4-}"
+export TARG_COMMIT TARG_NAME TARG_EMAIL
